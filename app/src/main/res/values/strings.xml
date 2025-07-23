@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">forWHAT</string>
+    <string name="what_is_u_name">КАК ТЕБЯ ЗОВУТ?</string>
+    <string name="_18">ВКЛЮЧИТЬ РЕЖИМ 18+</string>
+    <string name="yes">ДА</string>
+    <string name="no">НЕТ</string>
+    <string name="plug">заглушка</string>
+    <string name="my_continue"><![CDATA[< ПРОДОЛЖИТЬ >]]></string>
+
+</resources>

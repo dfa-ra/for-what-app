@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    app:cardCornerRadius="16dp"  
+    app:cardElevation="8dp">
+
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:background="@color/dark_gray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ВАШЕ ИМЯ"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/aqua"
+                android:fontFamily="@font/south_park"/>
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plug"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/brown"
+                android:fontFamily="@font/south_park"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18+"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/aqua"
+                android:fontFamily="@font/south_park"/>
+            <CheckBox
+                android:id="@+id/is_pgr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:paddingStart="40dp"
+                android:paddingEnd="0dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="РЕЖИМЫ"
+            android:textSize="35sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/aqua"
+            android:fontFamily="@font/south_park"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_motivation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="МОТИВАЦИ"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/light_brown"
+                    android:fontFamily="@font/south_park"
+                    style="@style/HiddenRadioButton"/>
+
+                <RadioButton
+                    android:id="@+id/radio_appoach"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ПОДКАТЫ"
+                    android:textAlignment="center"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/light_brown"
+                    android:fontFamily="@font/south_park"
+                    style="@style/HiddenRadioButton"/>
+
+                <RadioButton
+                    android:id="@+id/radio_jokes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="АНЕКДОТЫ"
+                    android:textAlignment="center"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/light_brown"
+                    android:fontFamily="@font/south_park"
+                    style="@style/HiddenRadioButton"/>
+            </RadioGroup>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
