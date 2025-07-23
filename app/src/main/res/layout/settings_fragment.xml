@@ -61,6 +61,9 @@
                 android:scaleX="2"
                 android:scaleY="2"
                 android:paddingStart="40dp"
+                android:shadowColor="@color/brown"
+                android:buttonTint="@color/light_brown"
+                android:backgroundTint="@color/brown"
                 android:paddingEnd="0dp" />
         </LinearLayout>
 

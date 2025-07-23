@@ -48,7 +48,7 @@ public class MainViewModel extends ViewModel {
     }
 
     public void getNewGeneration(){
-        this.openaiUseCase.execute("Bearer <токен я не дам!!>", getPromtText())
+        this.openaiUseCase.execute("Bearer < token я не дам -_- >", getPromtText())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<String>() {
                     @Override

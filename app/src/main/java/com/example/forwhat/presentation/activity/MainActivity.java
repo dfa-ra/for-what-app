@@ -2,6 +2,7 @@ package com.example.forwhat.presentation.activity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,11 +44,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void showLoading() {
+        binding.loading.setVisibility(View.VISIBLE);
+        binding.forWhat.setVisibility(View.GONE);
+        binding.loading.setIndeterminate(true);
+    }
+
+    public void hideLoading() {
+        binding.loading.setVisibility(View.GONE);
+        binding.forWhat.setVisibility(View.VISIBLE);
+    }
+
 
     private void setupListeners(){
         binding.forWhat.setOnClickListener(clc -> {
             Log.d("aa88", "start generation");
             mainViewModel.getNewGeneration();
+            showLoading();
         });
 
         binding.settingsButton.setOnClickListener(clc -> {
@@ -62,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         mainViewModel.getMotivationMessage().observe(this, message -> {
             Log.d("aa88", "change: " + message);
             binding.forWhat.setText(message);
+            hideLoading();
         });
     }
 

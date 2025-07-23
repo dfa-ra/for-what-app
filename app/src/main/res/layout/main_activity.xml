@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -33,11 +32,13 @@
 
             <ImageView
                 android:id="@+id/settings_button"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleX="2"
+                android:scaleY="2"
                 android:layout_gravity="end"
-                android:padding="10dp"
-                android:src="@drawable/ic_launcher_background"
+                android:padding="20dp"
+                android:src="@drawable/setting"
                 />
 
         </FrameLayout>
@@ -46,23 +47,45 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/for_what"
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/plug"
+                android:visibility="gone"/>
 
-                app:autoSizeTextType="uniform"
-                android:padding="40dp"
-                app:autoSizeMinTextSize="12sp"
-                app:autoSizeMaxTextSize="35sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/for_what"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/plug"
 
-                android:textColor="@color/aqua"
-                android:fontFamily="@font/south_park"/>
+                    android:visibility="visible"
+                    app:autoSizeTextType="uniform"
+                    android:padding="40dp"
+                    app:autoSizeMinTextSize="12sp"
+                    app:autoSizeMaxTextSize="35sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
 
+                    android:textColor="@color/aqua"
+                    android:fontFamily="@font/south_park"/>
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/loading"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    app:indicatorColor="@color/light_brown"
+                    app:trackColor="@color/brown"/>
+
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 
