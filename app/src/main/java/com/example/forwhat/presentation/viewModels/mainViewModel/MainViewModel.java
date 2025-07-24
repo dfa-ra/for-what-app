@@ -26,6 +26,7 @@ public class MainViewModel extends ViewModel {
     private final MutableLiveData<String> userName = new MutableLiveData<>();
     private final MutableLiveData<GenTypes> promt = new MutableLiveData<>();
     private final MutableLiveData<Boolean> isPgr = new MutableLiveData<>(false);
+    private final MutableLiveData<String> errorText = new MutableLiveData<>();
 
     public MainViewModel(OpenaiUseCase openaiUseCase, SharedPreferences sharedPreferences) {
         this.openaiUseCase = openaiUseCase;
@@ -48,7 +49,7 @@ public class MainViewModel extends ViewModel {
     }
 
     public void getNewGeneration(){
-        this.openaiUseCase.execute("Bearer < token я не дам -_- >", getPromtText())
+        this.openaiUseCase.execute("Bearer <токен я не дам>", getPromtText())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<String>() {
                     @Override
@@ -64,13 +65,17 @@ public class MainViewModel extends ViewModel {
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-
+                        errorText.setValue("Случилась ошибка при генерации :(");
                     }
                 });
     }
 
     public LiveData<String> getMotivationMessage() {
         return motivationMessage;
+    }
+
+    public LiveData<String> getErrorText() {
+        return errorText;
     }
 
     public LiveData<Boolean> getIsPgr() {

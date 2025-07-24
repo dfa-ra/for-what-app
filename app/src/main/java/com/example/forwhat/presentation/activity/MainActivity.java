@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupListeners(){
         binding.forWhat.setOnClickListener(clc -> {
-            Log.d("aa88", "start generation");
             mainViewModel.getNewGeneration();
             showLoading();
         });
@@ -73,8 +72,13 @@ public class MainActivity extends AppCompatActivity {
     private void setupObservers(){
         // наблюдатель за изменение текста
         mainViewModel.getMotivationMessage().observe(this, message -> {
-            Log.d("aa88", "change: " + message);
             binding.forWhat.setText(message);
+            hideLoading();
+        });
+
+        // наблюдатель за ошибками
+        mainViewModel.getErrorText().observe(this, errorText -> {
+            binding.forWhat.setText(errorText);
             hideLoading();
         });
     }
